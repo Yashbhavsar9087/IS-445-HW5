@@ -21,7 +21,25 @@ We can use a vegachart HTML tag like so:
 <vegachart schema-url="{{ site.baseurl }}/assets/json/cars.json" style="width: 100%"></vegachart>
 ```
 
-<vegachart schema-url="{{ site.baseurl }}/assets/json/cars.json" style="width: 100%"></vegachart>
+<vegachart schema-url="{{ site.baseurl }}/assets/json/Pressure.json" style="width: 100%"></vegachart>
+### Plot 1
+
+#### Description of Visualization:
+The visualization is a bar chart that presents data on Bigfoot sightings during Fall 2022. Each bar represents a state, showcasing the total number of sightings on the y-axis and the states on the x-axis. Additionally, the color of each bar represents the average pressure recorded in each state, providing a visual comparison of both variables across different states. As we see there are more number of sightings when the pressure is between 1016 - 1018 Pascals.
+
+#### Design Choices and Encoding Types:
+Encoding Types:
+The x-axis (x=alt.X('state:N', title='State')) encodes the states' names.
+The y-axis (y=alt.Y('total_sightings:Q', title='Total Sightings')) encodes the total number of sightings.
+The color encoding (color=alt.Color('avg_pressure:Q', scale=alt.Scale(scheme='viridis'), title='Average Pressure')) represents the average pressure, with the color scheme set to 'viridis' for a visually appealing and intuitive representation of pressure levels.
+
+#### Data Transformations and Analysis:
+It aggregates the data by state using df.groupby('state').agg({'number': 'count', 'pressure': 'mean'}) to calculate the total number of sightings and the average pressure for each state.
+The reset_index() method is used to reset the index after aggregation for clarity in further operations.
+These transformations are crucial as they summarize the raw data into meaningful insights, allowing for a clear visualization of Bigfoot sightings and average pressure by state.
+
+<vegachart schema-url="{{ site.baseurl }}/assets/json/Sightings.json" style="width: 100%"></vegachart>
+
 
 In theory, you can also use [Jekyll hooks](https://jekyllrb.com/docs/plugins/hooks/) to do it, but I haven't figured out a way that looks nice yet.
 
