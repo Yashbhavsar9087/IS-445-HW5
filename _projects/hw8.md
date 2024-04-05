@@ -54,7 +54,7 @@ Below is where we can put some links to both the data and the analysis code as b
 </div>
 
 <div class="right">
-{% include elements/button.html link="https://blog.4dcu.be/programming/2021/05/03/Interactive-Visualizations.html" text="The Analysis" %}
+{% include elements/button.html link="{{ site.baseurl }}/_projects/Workbook.ipynb" text="The Analysis" %}
 </div>
 
 
