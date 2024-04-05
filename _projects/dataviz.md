@@ -13,7 +13,7 @@ custom_js:
 # DATA VISUALIZATION ASSIGNMENT 8
 
 
-<vegachart schema-url="{{ site.baseurl }}/assets/json/bar.json" style="width: 100%"></vegachart>
+<vegachart schema-url="{{ site.baseurl }}/assets/json/plot1.json" style="width: 100%"></vegachart>
 
 
 
@@ -27,7 +27,7 @@ custom_js:
 - Added tooltip for detailed info (year acquired, status, count) on hover, enhancing interactivity and insights. Made chart interactive with .interactive() for clearer understanding and engagement.
 
 
-<vegachart schema-url="{{ site.baseurl }}/assets/json/scatter_plot.json" style="width: 100%"></vegachart>
+<vegachart schema-url="{{ site.baseurl }}/assets/json/plot2.json" style="width: 100%"></vegachart>
 
 
 #### Description of Visualization of PLOT 2:
@@ -37,9 +37,9 @@ custom_js:
 
   
 <div class="left">
-{% include elements/button.html link="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv" text="The Data" %}
+{% include elements/button.html link="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv" text="The Data" %}
 </div>
 
 <div class="right">
-{% include elements/button.html link="https://github.com/Rushabhnm/rushabh_dataviz/blob/main/python_notebooks/HW8.ipynb" text="The Analysis" %}
+{% include elements/button.html link="https://github.com/Yashbhavsar9087/IS-445-HW5/edit/main/_projects/Workbook.ipynb" text="The Analysis" %}
 </div>
