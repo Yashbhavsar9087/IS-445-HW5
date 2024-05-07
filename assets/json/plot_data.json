@@ -1,0 +1,32 @@
+{
+    "plot_title": "Top 10 Countries with Highest Emissions",
+    "x_label": "Countries",
+    "y_label": "Emissions Quantity",
+    "plot_type": "bar",
+    "plot_data": {
+        "x_values": [
+            "CHN",
+            "USA",
+            "IND",
+            "RUS",
+            "JPN",
+            "SAU",
+            "DEU",
+            "KOR",
+            "IRN",
+            "BRA"
+        ],
+        "y_values": [
+            13590.909904479,
+            13214.031216915,
+            5371.72567458,
+            4062.581393663,
+            2897.178665117,
+            2412.506881385,
+            2129.573646847,
+            2114.23305321,
+            1823.7234633580001,
+            1754.477999651
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "plot_title": "Interactive Emissions by Country and Gas Type",
+    "x_label": "Country",
+    "y_label": "Emissions Quantity",
+    "plot_type": "bar",
+    "top_countries": [
+        "USA",
+        "CHN",
+        "IND",
+        "RUS",
+        "JPN",
+        "SAU",
+        "DEU",
+        "KOR",
+        "BRA",
+        "IRN"
+    ],
+    "color_dict": {
+        "co2": "blue",
+        "ch4": "green",
+        "n2o": "red",
+        "co2e_100yr": "orange",
+        "co2e_20yr": "purple"
+    }
+}
