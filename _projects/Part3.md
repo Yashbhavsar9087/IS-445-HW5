@@ -27,7 +27,7 @@ Additionally, we addressed any missing or null values within the dataset. Althou
 
 Overall, through these data cleaning and preprocessing steps, we have prepared a refined dataset that is well-suited for further analysis and exploration. The streamlined structure, devoid of unnecessary columns and cleaned of missing values, sets a solid foundation for conducting insightful data analysis and deriving valuable insights.
 
-### Plots
+# Part 3: Data Visualization
 
 #### Description of Visualization: Graph 1: Stacked Barchart
 
