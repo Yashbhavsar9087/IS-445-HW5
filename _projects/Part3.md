@@ -9,58 +9,77 @@ custom_js:
   - vega-embed.min
   - justcharts
 ---
+# Part 1: Intro of Dataset
+The name of the dataset is "oil-and-gas-refining_emissions_sources.csv".
 
-# DATA VISUALIZATION ASSIGNMENT 8
+We obtained it from the Climate TRACE website (https://climatetrace.org/data) under "Fossil Fuel Operations".
 
+We located the license of the dataset in the about_the_data.pdf file within the ABOUT_THE_DATA folder. The document states that "all Climate TRACE data is freely available under the Creative Commons Attribution 4.0 International Public License".
 
-<vegachart schema-url="{{ site.baseurl }}/assets/json/plot_data.json" style="width: 100%"></vegachart>
+The file size is 12.5MB and there are 27360 items.
 
+# Part 2: Data Cleaning and Analysis
+In this section, we conducted a thorough data cleaning and analysis process to prepare our dataset for further exploration. One of the initial steps involved dropping columns that were deemed irrelevant for our analysis. These columns included 'other1', 'other2', 'other3', and so on, along with their corresponding definition columns like 'other1_def', 'other2_def', and so forth. These columns were not essential to our analysis objectives and were thus removed to streamline our dataset.
 
+Following the column removal, we focused on extracting relevant information from the remaining data. Specifically, we extracted the year component from the 'date' column, as it was the only temporal information required for our analysis. This step allowed us to simplify the dataset structure while retaining the necessary temporal context for our analysis.
 
+Additionally, we addressed any missing or null values within the dataset. Although the number of rows with null values was relatively small, approximately 50 to 60 rows, we opted to drop these rows to ensure the integrity and accuracy of our analysis. Removing these rows helped us maintain a clean and consistent dataset, which is crucial for drawing meaningful insights and making informed decisions based on the data.
 
+Overall, through these data cleaning and preprocessing steps, we have prepared a refined dataset that is well-suited for further analysis and exploration. The streamlined structure, devoid of unnecessary columns and cleaned of missing values, sets a solid foundation for conducting insightful data analysis and deriving valuable insights.
 
+### Plots
 
-### Plot 1
+#### Description of Visualization: Graph 1: Stacked Barchart
 
-#### Description of Visualization:
-The visualization is a bar chart that presents data on Bigfoot sightings during Fall 2022. Each bar represents a state, showcasing the total number of sightings on the y-axis and the states on the x-axis. Additionally, the color of each bar represents the average pressure recorded in each state, providing a visual comparison of both variables across different states. As we see there are more number of sightings when the pressure is between 1016 - 1018 Pascals.
+We first plotted the comprehensive gas emissions for the countries with the top 10 emissions around the world. This is in the form of a stacked bar chart in order to be able to see the distribution of the different types of gases.
 
-#### Design Choices and Encoding Types:
-Encoding Types:
-The x-axis (x=alt.X('state:N', title='State')) encodes the states' names.
-The y-axis (y=alt.Y('total_sightings:Q', title='Total Sightings')) encodes the total number of sightings.
-The color encoding (color=alt.Color('avg_pressure:Q', scale=alt.Scale(scheme='viridis'), title='Average Pressure')) represents the average pressure, with the color scheme set to 'viridis' for a visually appealing and intuitive representation of pressure levels.
+#### Description of Visualization: Graph 2: Barchart
 
-#### Data Transformations and Analysis:
-It aggregates the data by state using df.groupby('state').agg({'number': 'count', 'pressure': 'mean'}) to calculate the total number of sightings and the average pressure for each state.
+To explore this concept further, we made an interactive bar chart to select the year to focus on. This shows the gas emissions of the same top 10 countries, separated by gas types, which are side by side. 
 
-#### For Interactivity: 
-Here, we use tooltip for detailed info (state, total sightings, avg pressure) on hover, enhancing interactivity and insights. Made chart interactive with .interactive() for clearer understanding and engagement.
+Interactivity: 
+- Select the year from the dropdown
+- Reference the key to identify the color-coded gas types
 
+Insights: 
+- USA and China are in the lead for gas emissions every year
+- Carbon dioxide is so significant that N2O and CH4 are not even visible on this graph
 
-<vegachart schema-url="{{ site.baseurl }}/assets/json/plot_data_interactive.json" style="width: 100%"></vegachart>
+#### Description of Visualization: Graph 3: Line Chart
 
-### Plot 2
+This visualization better displays the pattern of gas emissions over time. These are separated by gas type and country.
 
-#### Description of Visualization:
-The visualization is a bar chart that presents data on Bigfoot sightings during Fall 2022. Each bar represents a month, showcasing the total number of sightings on the y-axis and the months on the x-axis. The color of each bar represents the month, providing a visual distinction between different months. Hovering over each bar displays detailed information about the month and the count of sightings, enhancing interactivity and insights.
+Interactivity: 
+- Select the gas type from the dropdown
+- Reference the key to identify the color-coded countries
 
-#### Design Choices and Encoding Types:
-Encoding Types:
-The x-axis encodes the months' names with a custom axis label angle for better readability.
-The y-axis encodes the total number of sightings.
-The color encoding represents each month with a distinct color using a custom color scheme for visual distinction.
+Insights: 
+- As expected, the gas emissions for every type have generally increased over the years. 
+- USA and China are in the lead every year
+- There are some interesting dips that could be investigated further
 
-#### Data Transformations and Analysis:
-The code performs data cleaning by removing rows with missing values in the 'date' column and extracting the month from the date variable. It then aggregates the data by month to calculate the total number of sightings for each month.
+#### Description of Visualization: Graph 4: World Map
 
-#### For Interactivity:
-The chart is made interactive with tooltips that provide detailed information (month, count) on hover, enhancing interactivity and allowing users to gain insights by exploring the data visually.
-  
+To better visualize the geographic distribution of gas emissions, we have plotted this onto a world map. 
+
+Interactivity: 
+- Select the gas and the year from the dropdown
+- The size of the bubbles is proportional to the emissions at that specific latitude and longitude
+- The color of the bubbles is based on the gas type
+
+Insights: 
+- Over a period of time, CH4 was decreasing in Australia, so there may have been 1 or 2 industries that have shut down.
+- There are a lot of large bubbles
+in the USA, which matches the insights from the other visualizations
+
+#### Description of Visualization: Graph 5: World Map
+
+This graph is the same as the previous graph but was implemented using plotly rather than altair, as altair doesn't support zoom/pan functionality for world maps. However, the functionality of the results is nearly identical.
+
 <div class="left">
 {% include elements/button.html link="https://raw.githubusercontent.com/adlthya/adlthya.github.io/main/_data/oil-and-gas-refining_emissions_sources.csv" text="The Data" %}
 </div>
 
 <div class="right">
-{% include elements/button.html link="https://github.com/Yashbhavsar9087/IS-445-HW5/edit/main/_projects/Workbook.ipynb" text="The Analysis" %}
+{% include elements/button.html link="https://github.com/Yashbhavsar9087/IS-445-HW5/edit/main/_projects/IS445_Final_Prep_1.ipynb" text="The Analysis" %}
 </div>
