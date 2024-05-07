@@ -13,7 +13,7 @@ custom_js:
 # DATA VISUALIZATION ASSIGNMENT 8
 
 
-<vegachart schema-url="{{ site.baseurl }}/assets/json/plot1.json" style="width: 100%"></vegachart>
+<vegachart schema-url="{{ site.baseurl }}/assets/json/plot_data.json" style="width: 100%"></vegachart>
 
 
 
@@ -38,7 +38,7 @@ It aggregates the data by state using df.groupby('state').agg({'number': 'count'
 Here, we use tooltip for detailed info (state, total sightings, avg pressure) on hover, enhancing interactivity and insights. Made chart interactive with .interactive() for clearer understanding and engagement.
 
 
-<vegachart schema-url="{{ site.baseurl }}/assets/json/plot2.json" style="width: 100%"></vegachart>
+<vegachart schema-url="{{ site.baseurl }}/assets/json/plot_data_interactive.json" style="width: 100%"></vegachart>
 
 ### Plot 2
 
@@ -58,7 +58,7 @@ The code performs data cleaning by removing rows with missing values in the 'dat
 The chart is made interactive with tooltips that provide detailed information (month, count) on hover, enhancing interactivity and allowing users to gain insights by exploring the data visually.
   
 <div class="left">
-{% include elements/button.html link="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv" text="The Data" %}
+{% include elements/button.html link="https://raw.githubusercontent.com/adlthya/adlthya.github.io/main/_data/oil-and-gas-refining_emissions_sources.csv" text="The Data" %}
 </div>
 
 <div class="right">
